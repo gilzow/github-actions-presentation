@@ -23,4 +23,4 @@ jobs:
 
       - run: | 
           echo "::notice::Hello there, ${{ inputs.thename }}!"
-        id: Greet the user
+        name: Greet the user
