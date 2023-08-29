@@ -11,6 +11,7 @@ on:
 
 jobs:
   say_hello:
+    name: "Let's greet the user!"
     runs-on: ubuntu-latest
     steps:
       - id: verify-user
