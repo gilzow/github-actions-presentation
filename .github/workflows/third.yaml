@@ -1,4 +1,4 @@
-name: Welcome to the party
+name: Welcome to the party (third)
 on:
   workflow_dispatch:
     inputs:
@@ -13,5 +13,14 @@ jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
+      - id: verify-user
+        shell: bash
+        run: |
+          if [[ "Paul" = "${{ inputs.thename }}" ]]; then 
+            echo "::error::You used they who shall not be named! Be gone!"
+            exit 1
+          fi
+
       - run: | 
-          echo "Hello there, ${{ inputs.thename }}!"
+          echo "::notice::Hello there, ${{ inputs.thename }}!"
+        id: Greet the user
