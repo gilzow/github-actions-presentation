@@ -1,18 +1,13 @@
 name: Welcome to the party
 on:
   workflow_dispatch:
-    inputs:
-      # The value here is how you will reference the input in the workflow
-      thename:
-        description: 'What is your name?'
-        type: string
-        required: true
-
 
 jobs:
   say_hello:
     name: "Let's greet the user!"
     runs-on: ubuntu-latest
     steps:
-      - run: | 
-          echo "Hello there, ${{ inputs.thename }}!"
+      - run: echo "Hello there!"
+      - uses: actions/checkout@v3
+      - run: cat ./github/workflows/list.txt
+      - run: echo "I am step 4!"

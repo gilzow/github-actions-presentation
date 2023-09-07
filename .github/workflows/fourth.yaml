@@ -1,0 +1,27 @@
+name: Welcome to the party (third)
+on:
+  workflow_dispatch:
+    inputs:
+      # The value here is how you will reference the input in the workflow
+      thename:
+        description: 'What is your name?'
+        type: string
+        required: true
+
+
+jobs:
+  say_hello:
+    name: "Let's greet the user!"
+    runs-on: ubuntu-latest
+    steps:
+      - id: verify-user
+        shell: bash
+        run: |
+          if [[ "Paul" = "${{ inputs.thename }}" ]]; then 
+            echo "::error::You used they who shall not be named! Be gone!"
+            exit 1
+          fi
+
+      - run: | 
+          echo "::notice::Hello there, ${{ inputs.thename }}!"
+        name: Greet the user
