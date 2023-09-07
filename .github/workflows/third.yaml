@@ -1,4 +1,4 @@
-name: Welcome to the party
+name: Welcome to the party (third)
 on:
   workflow_dispatch:
     inputs:

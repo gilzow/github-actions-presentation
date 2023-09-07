@@ -1,4 +1,4 @@
-name: Welcome to the party
+name: Welcome to the party (second)
 on:
   workflow_dispatch:
 
@@ -9,5 +9,5 @@ jobs:
     steps:
       - run: echo "Hello there!"
       - uses: actions/checkout@v3
-      - run: cat ./github/workflows/list.txt
+      - run: cat ./.github/workflows/list.txt
       - run: echo "I am step 4!"
