@@ -8,10 +8,11 @@ inputs:
     type: string
     required: true
 
-runs: composite
-steps:
-  - name: Truly greet the user
-    id: greet-user
-    shell: bash
-    run: |
-      echo "::notice::Hello, ${{ inputs.thename }} from an action!!!"
+runs:
+  using: composite
+  steps:
+    - name: Truly greet the user
+      id: greet-user
+      shell: bash
+      run: |
+        echo "::notice::Hello, ${{ inputs.thename }} from an action!!!"
