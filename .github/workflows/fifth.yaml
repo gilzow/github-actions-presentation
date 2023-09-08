@@ -9,6 +9,9 @@ on:
 
 jobs:
   say_hello:
-    uses: ./.github/actions/greet-user
-    with:
-      thename: ${{ inputs.thename }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/greet-user
+        with:
+          thename: ${{ inputs.thename }}
