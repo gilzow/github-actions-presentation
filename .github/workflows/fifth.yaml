@@ -9,6 +9,6 @@ on:
 
 jobs:
   say_hello:
-    uses: ./github/actions/action2.yaml
+    uses: ./github/actions/action2.yaml@main
     with:
       thename: ${{ inputs.thename }}
