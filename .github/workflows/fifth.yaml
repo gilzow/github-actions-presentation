@@ -1,0 +1,14 @@
+name: Welcome a user via Action
+on:
+  workflow_dispatch:
+    inputs:
+      thename:
+        description: "Who should we greet?"
+        type: string
+        required: true
+
+jobs:
+  say_hello:
+    uses: ./github/actions/action2.yaml
+    with:
+      thename: ${{ inputs.thename }}

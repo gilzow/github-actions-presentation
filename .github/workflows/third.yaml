@@ -2,7 +2,7 @@ name: Welcome to the party (third)
 on:
   workflow_dispatch:
     inputs:
-      # The value here is how you will reference the input in the workflow
+      # The value here is how you will reference the input in the job steps
       thename:
         description: 'What is your name?'
         type: string

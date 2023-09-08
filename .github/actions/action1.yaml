@@ -1,0 +1,5 @@
+name: Greets a User
+description: Greets a user to the GitHub Actions platform
+runs:
+  using: 'node18'
+  main: 'main.js'
