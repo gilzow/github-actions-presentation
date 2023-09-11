@@ -1,0 +1,17 @@
+name: Welcome a user via a JavaScript Action
+on:
+  workflow_dispatch:
+    inputs:
+      thename:
+        description: "Who should we greet?"
+        type: string
+        required: true
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/action-js
+        with:
+          thename: ${{ inputs.thename }}

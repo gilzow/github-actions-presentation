@@ -2855,7 +2855,7 @@ const core = __nccwpck_require__(186);
 async function run() {
     try {
         const thename = core.getInput('thename')
-        console.log(`Hello there, ${thename}!!!`)
+        console.log(`Greetings, ${thename}, from the JavaScript Action!!!`)
     }
     catch (error) {
         core.setFailed(error.message);
