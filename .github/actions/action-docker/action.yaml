@@ -1,0 +1,14 @@
+name: Welcome to the party via Docker Action
+description: Welcomes someone to our party
+
+inputs:
+  thename:
+    description: 'Who should we greet?'
+    type: string
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.thename }}
