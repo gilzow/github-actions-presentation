@@ -1,0 +1,11 @@
+name: Welcome to the party (JS Action)
+description: Welcome someone to our party via JS Action
+inputs:
+  thename:
+    description: What is your name?
+    type: string
+    required: true
+
+runs:
+  using: node18
+  main: dist/index.js
