@@ -1,0 +1,21 @@
+name: Runs visual regression testing
+on:
+  workflow_dispatch:
+    inputs:
+      refurl:
+        description: "The production URL we should test against."
+        type: string
+        required: true
+      testurl:
+        description: "The URL we should test for changes."
+        type: string
+        required: true
+
+jobs:
+  vrt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: gilzow/github-actions-presentation-vrt@main
+        with:
+          testurl: ${{ inputs.testurl }}
+          referenceurl: $${{ inputs.refurl }}
