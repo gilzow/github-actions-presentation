@@ -18,4 +18,4 @@ jobs:
       - uses: gilzow/github-actions-presentation-vrt@main
         with:
           testurl: ${{ inputs.testurl }}
-          referenceurl: $${{ inputs.refurl }}
+          referenceurl: ${{ inputs.refurl }}
