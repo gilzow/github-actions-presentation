@@ -1,0 +1,17 @@
+name: Welcome to the party (ste-names)
+on:
+  workflow_dispatch:
+
+jobs:
+  say_hello:
+    name: "Let's greet the user!"
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello there!"
+        name: Send a greeting
+      - uses: actions/checkout@v3
+        name: checkout this repo
+      - run: cat ./.github/workflows/list.txt
+        name: I display the contents of list.txt
+      - run: echo "I am step 4!"
+        name: tell them who you are
