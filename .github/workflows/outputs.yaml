@@ -1,0 +1,20 @@
+name: Welcome a user, but let them know when via outputs
+on:
+  workflow_dispatch:
+    inputs:
+      thename:
+        description: "Who should we greet?"
+        type: string
+        required: true
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello there, ${{ inputs.thename }}!!!"
+        name: Say hello to user
+      - id: get-time
+        name: Grab the current time
+        run: |
+          curTime=$(date)
+          echo "currenttime=${curTime}" >> $GITHUB_OUTPUT
+      - run: echo "The time from the early step is ${{ steps.get-time.outputs.currenttime }}"
