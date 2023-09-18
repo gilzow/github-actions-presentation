@@ -14,4 +14,4 @@ jobs:
       - uses: actions/checkout@v3
       - uses: ./.github/actions/greet-user
         with:
-          thename: ${{ inputs.thename }}
+          who_to_greet: ${{ inputs.thename }}

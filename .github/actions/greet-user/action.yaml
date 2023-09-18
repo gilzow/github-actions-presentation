@@ -3,7 +3,7 @@ description: Welcomes someone to our party
 
 inputs:
   # The value here is how you will reference the input in the job steps
-  thename:
+  who_to_greet:
     description: 'What is your name?'
     type: string
     required: true
@@ -15,4 +15,4 @@ runs:
       id: greet-user
       shell: bash
       run: |
-        echo "::notice::Hello, ${{ inputs.thename }} from an action!!!"
+        echo "::notice::Hello, ${{ inputs.who_to_greet }} from an action!!!"
